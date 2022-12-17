@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uko4JJYGMbL4jMwI9BZtXFbYyHISN2rxdh87zz4OKnRpDKG4cvFmCWbCx0+IBj0qmzBrIpgyLHoYJ5GdgC0wtA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cmila\\OneDrive\\Área de Trabalho\\INF0999-Projeto\\INF0999-Projeto.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cmila\\.nuget\\packages\\communitytoolkit.mvvm\\8.0.0\\communitytoolkit.mvvm.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
