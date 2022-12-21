@@ -6,6 +6,7 @@ using CommunityToolkit.Mvvm.Messaging;
 using CommunityToolkit.Mvvm.Messaging.Messages;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.IO;
 using System.Text.Json.Serialization;
 
 namespace teste_projeto_final.ViewModel
@@ -20,6 +21,7 @@ namespace teste_projeto_final.ViewModel
         public RelayCommand Editarx { get; set; }
         public RelayCommand Sairx { get; set; }
         JsonArray catadores = new JsonArray();
+        JsonObject listaDeCatadores = new JsonObject();
 
         private void NovoCMD()
         {
@@ -48,7 +50,7 @@ namespace teste_projeto_final.ViewModel
 
             foreach (JsonObject objeto in catadores)
             {
-                if (objeto["Nome"] == cloneColetor.Nome)
+                if (objeto["Nome"].Equals(cloneColetor.Nome))
                 {
                     objeto["Telefone"] = cloneColetor.Telefone;
                     objeto["Endereço"] = cloneColetor.Endereço;
@@ -109,9 +111,9 @@ namespace teste_projeto_final.ViewModel
         {
 
             var novocoletor = new JsonObject();
-            novocoletor["Nome"] = coletor._nome;
-            novocoletor["Endereço"] = coletor._endereço;
-            novocoletor["Telefone"] = coletor._telefone;
+            novocoletor["Nome"] = coletor.Nome;
+            novocoletor["Endereço"] = coletor.Endereço;
+            novocoletor["Telefone"] = coletor.Telefone;
             this.catadores.Add(novocoletor);
             CriaJson();
         }
