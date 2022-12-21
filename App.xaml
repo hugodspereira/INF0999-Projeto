@@ -1,8 +1,8 @@
-﻿<Application x:Class="INF0999_Projeto.App"
+﻿<Application x:Class="teste_projeto_final.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:INF0999_Projeto"
-             StartupUri="WindowProdutor.xaml">
+             xmlns:local="clr-namespace:teste_projeto_final"
+             StartupUri="ONG.xaml">
     <Application.Resources>
          
     </Application.Resources>

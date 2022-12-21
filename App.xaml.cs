@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace INF0999_Projeto
+namespace teste_projeto_final
 {
     /// <summary>
     /// Interaction logic for App.xaml
