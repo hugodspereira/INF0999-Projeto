@@ -1,0 +1,35 @@
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final.csproj.AssemblyReference.cache
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\CadastroWindow.g.cs
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\ColetorWindow.g.cs
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\HomePage.g.cs
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\LixoWindow.g.cs
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\LoginWindow.g.cs
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\ONG.g.cs
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\ProdutorWindow.g.cs
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final_MarkupCompile.cache
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final_MarkupCompile.lref
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\bin\Debug\net6.0-windows\teste projeto final.exe
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\bin\Debug\net6.0-windows\teste projeto final.deps.json
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\bin\Debug\net6.0-windows\teste projeto final.runtimeconfig.json
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\bin\Debug\net6.0-windows\teste projeto final.dll
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\bin\Debug\net6.0-windows\teste projeto final.pdb
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\bin\Debug\net6.0-windows\CommunityToolkit.Mvvm.dll
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\CadastroWindow.baml
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\ColetorWindow.baml
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\HomePage.baml
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\LixoWindow.baml
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\LoginWindow.baml
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\ONG.baml
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\ProdutorWindow.baml
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final.g.resources
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final.AssemblyInfoInputs.cache
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final.AssemblyInfo.cs
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final.csproj.CoreCompileInputs.cache
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final.csproj.CopyComplete
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final.dll
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\refint\teste projeto final.dll
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final.pdb
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\teste projeto final.genruntimeconfig.cache
+C:\Users\cmila\OneDrive\Área de Trabalho\INF0999-Projeto\obj\Debug\net6.0-windows\ref\teste projeto final.dll

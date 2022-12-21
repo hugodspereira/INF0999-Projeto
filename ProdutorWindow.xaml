@@ -1,0 +1,43 @@
+<Window x:Class="teste_projeto_final.ProdutorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:teste_projeto_final"
+        mc:Ignorable="d"
+        Title="Produtor" Height="450" Width="800" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background = "#CFE2F3" />
+        <Border Grid.Column = "1" Background = "#B6D7A8" />
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Agendar coleta" HorizontalAlignment="Center" FontSize="14" />
+            <DataGrid ItemsSource="{Binding listaLixo}" Margin = "20" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding LixoSelecionado}" FontSize="14" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header = "Item" Binding="{Binding Item}"/>
+                    <DataGridTextColumn Header = "Quantidade" Binding="{Binding Quantidade}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button FontSize="14" Content="Inserir" Command="{Binding Novox}" Margin = "20,20,20,0"/>
+            <Button FontSize="14" Content="Agendar coleta" Command="{Binding Agendarx}" Margin = "20,20,20,0"/>
+            <Button FontSize="14" Content="Editar" IsCancel="true" Command="{Binding Editarx}" Margin = "20,20,20,0" />
+            <Button FontSize="14" Content="Deletar" IsCancel="true" Command="{Binding Deletarx}" Margin = "20,20,20,0" />
+            <Button FontSize="14" Content="Sair" IsCancel="true" Command="{Binding Sairx}" Margin = "20,20,20,0" />
+        </StackPanel>
+        <StackPanel Grid.Column = "1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Coletas agendadas" HorizontalAlignment="Center" FontSize="14" />
+            <DataGrid ItemsSource="{Binding listaLixo}" Margin = "20" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding LixoSelecionado}" FontSize="14" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header = "Item" Binding="{Binding Item}"/>
+                    <DataGridTextColumn Header = "Quantidade" Binding="{Binding Quantidade}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button FontSize="14" Content="Editar" IsCancel="true" Command="{Binding Editarx}" Margin = "20,20,20,0" />
+            <Button FontSize="14" Content="Deletar" IsCancel="true" Command="{Binding Deletarx}" Margin = "20,20,20,0" />
+            <Button FontSize="14" Content="Sair" IsCancel="true" Command="{Binding Sairx}" Margin = "20,20,20,0" />
+        </StackPanel>
+    </Grid>
+</Window>
