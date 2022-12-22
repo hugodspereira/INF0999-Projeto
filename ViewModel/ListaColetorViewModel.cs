@@ -4,6 +4,10 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Messaging;
 using CommunityToolkit.Mvvm.Messaging.Messages;
+using System.IO;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 
 namespace INF0999_Projeto.ViewModel
 {
@@ -16,6 +20,8 @@ namespace INF0999_Projeto.ViewModel
         public RelayCommand Deletarx { get; set; }
         public RelayCommand Editarx { get; set; }
         public RelayCommand Sairx { get; set; }
+        JsonArray catadores = new JsonArray();
+        JsonObject listaDeCatadores = new JsonObject();
         private void NovoCMD()
         {
             var coletorViewModel = new EditaColetorViewModel();
@@ -25,6 +31,7 @@ namespace INF0999_Projeto.ViewModel
                 this.listaColetor.Add(coletorViewModel.coletor);
                 this.Ativos++;
                 this.ColetorSelecionado = coletorViewModel.coletor;
+                InsereColetorJson(coletorViewModel.coletor);
             }
         }
         private void EditarCMD()
@@ -35,6 +42,16 @@ namespace INF0999_Projeto.ViewModel
             WeakReferenceMessenger.Default.Send(new OpenWindowMessage(coletorViewModel));
             if (coletorViewModel.coletor != null)
             {
+                foreach (JsonObject json in this.catadores)
+                {
+                    if (json["Nome"].ToString() == this.ColetorSelecionado.Nome)
+                    {
+                        json["Nome"] = cloneColetor.Nome;
+                        json["Telefone"] = cloneColetor.Telefone;
+                        json["Endereco"] = cloneColetor.Endereço;
+                    }
+                }
+                CriaJson();
                 this.ColetorSelecionado.Nome = cloneColetor.Nome;
                 this.ColetorSelecionado.Telefone = cloneColetor.Telefone;
                 this.ColetorSelecionado.Endereço = cloneColetor.Endereço;
@@ -42,6 +59,16 @@ namespace INF0999_Projeto.ViewModel
         }
         private void DeletarCMD()
         {
+            int index = 0;
+            foreach (var json in this.catadores)
+            {
+                if (json["Nome"].ToString() == this.ColetorSelecionado.Nome)
+                {
+                    index = catadores.IndexOf(json);
+                }
+            }
+            catadores.RemoveAt(index);
+            CriaJson();
             this.listaColetor.Remove(this.ColetorSelecionado);
             this.Ativos--;
             if (this.listaColetor.Count > 0)
@@ -79,6 +106,52 @@ namespace INF0999_Projeto.ViewModel
                 SetProperty(ref _ativos, value);
             }
         }
+        private void InsereColetorJson(Coletor coletor)
+        {
+
+            var novocoletor = new JsonObject();
+            novocoletor["Nome"] = coletor.Nome;
+            novocoletor["Endereco"] = coletor.Endereço;
+            novocoletor["Telefone"] = coletor.Telefone;
+            this.catadores.Add(novocoletor);
+            CriaJson();
+        }
+
+        public void CriaJson()
+        {
+            var output_filepath = "Dados/Catadores.json";
+            listaDeCatadores["Catadores"] = catadores;
+            JsonSerializerOptions options = new JsonSerializerOptions();
+            options.WriteIndented = true;
+            using FileStream fs = new(output_filepath, FileMode.Create, FileAccess.Write);
+            using StreamWriter sw = new(fs);
+            sw.Write(listaDeCatadores.ToJsonString(options));
+            sw.Flush();
+            sw.Close();
+        }
+
+        private void LeJson()
+        {
+            using (FileStream fs = File.OpenRead("Dados/Catadores.json"))
+            {
+                JsonDocument jsonDoc = JsonDocument.ParseAsync(fs).Result;
+                JsonElement element = jsonDoc.RootElement;
+
+                foreach (JsonProperty j in element.EnumerateObject())
+                {
+                    foreach (JsonElement i in j.Value.EnumerateArray())
+                    {
+                        var newperson = new JsonObject();
+                        foreach (JsonProperty property in i.EnumerateObject())
+                        {
+                            newperson[property.Name] = property.Value.ToString();
+                        }
+                        this.catadores.Add(newperson);
+                        PreparaColetorCollection(newperson);
+                    }
+                }
+            }
+        }
         public ListaColetorViewModel()
         {
             Novox = new RelayCommand(NovoCMD);
@@ -86,39 +159,22 @@ namespace INF0999_Projeto.ViewModel
             Editarx = new RelayCommand(EditarCMD, CanEditarCMD);
             Sairx = new RelayCommand(SairCMD);
             listaColetor = new ObservableCollection<Coletor>();
-            PreparaColetorCollection();
+            LeJson();
         }
-        private void PreparaColetorCollection()
+        private void PreparaColetorCollection(JsonObject newperson)
         {
-            var Coletor1 = new Coletor
-            {
-                Nome = "João da Silva",
-                Endereço = "Rua Dom Pedro",
-                Telefone = "019-91234-5678"
-            };
-            this.listaColetor.Add(Coletor1);
-            this.Ativos++;
-            var Coletor2 = new Coletor
-            {
-                Nome = "Luís Miguel Ferreira",
-                Endereço = "Rua Jardim Ibirapuera",
-                Telefone = "019-99135-7911"
-            };
-            this.listaColetor.Add(Coletor2);
-            this.Ativos++;
-            var Coletor3 = new Coletor
-            {
-                Nome = "Maria Luiza Gomes",
-                Endereço = "Rua Presidente Kennedy",
-                Telefone = "019-3829-1046"
-            };
-            this.listaColetor.Add(Coletor3);
-            this.Ativos++;
-            ColetorSelecionado = this.listaColetor[0];
+            Coletor coletor = new Coletor();
+            string nome = newperson["Nome"].ToString();
+            string telefone = newperson["Telefone"].ToString();
+            string endereco = newperson["Endereco"].ToString();
+            coletor.Nome = nome;
+            coletor.Telefone = telefone;
+            coletor.Endereço = endereco;
+            listaColetor.Add(coletor);
         }
     }
     public class OpenWindowMessage : ValueChangedMessage<EditaColetorViewModel>
     {
-        public OpenWindowMessage(EditaColetorViewModel ColetorViewModel) : base(ColetorViewModel) {}
+        public OpenWindowMessage(EditaColetorViewModel ColetorViewModel) : base(ColetorViewModel) { }
     }
 }

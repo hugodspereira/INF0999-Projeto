@@ -52,7 +52,7 @@ namespace INF0999_Projeto {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/INF0999-Projeto;V1.0.0.0;component/coopwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/INF0999-Projeto;component/coopwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CoopWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

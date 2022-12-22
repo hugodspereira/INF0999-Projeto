@@ -60,7 +60,7 @@ namespace INF0999_Projeto {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/INF0999-Projeto;V1.0.0.0;component/agendamentowindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/INF0999-Projeto;component/agendamentowindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\AgendamentoWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

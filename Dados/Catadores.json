@@ -1,0 +1,19 @@
+{
+  "Catadores": [
+    {
+      "Nome": "carlos",
+      "Endereco": "rua praia grande",
+      "Telefone": "99999999"
+    },
+    {
+      "Nome": "coletor 7",
+      "Endereco": "00",
+      "Telefone": "00"
+    },
+    {
+      "Nome": "coletor teste",
+      "Endereco": "rua",
+      "Telefone": "numero"
+    }
+  ]
+}
