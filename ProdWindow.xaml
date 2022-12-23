@@ -7,38 +7,23 @@
         mc:Ignorable="d"
         Title="Produtor" Height="450" Width="800" WindowState="Maximized">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="5*"/>
-        </Grid.ColumnDefinitions>
         <Border Background = "#CFE2F3" />
         <Border Grid.Column = "1" Background = "#B6D7A8" />
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Agendar coleta" HorizontalAlignment="Center" FontSize="14" />
-            <DataGrid ItemsSource="{Binding listaLixo}" Margin = "20" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding LixoSelecionado}" FontSize="14" >
+            <TextBlock Text="Agendar coleta" HorizontalAlignment="Center" FontSize="18" />
+            <DataGrid HorizontalScrollBarVisibility="Hidden" MaxWidth="700" ItemsSource="{Binding listaLixo}" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding LixoSelecionado}" FontSize="18" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header = "Item" Binding="{Binding Item}"/>
-                    <DataGridTextColumn Header = "Quantidade" Binding="{Binding Quantidade}"/>
+                    <DataGridTextColumn Header = "Item" Binding="{Binding Item}" MaxWidth="590" MinWidth="590"/>
+                    <DataGridTextColumn Header = "Quantidade" Binding="{Binding Quantidade}" MinWidth="110" MaxWidth="110"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button FontSize="14" Content="Inserir" Command="{Binding Novox}" Margin = "20,20,20,0"/>
-            <Button FontSize="14" Content="Agendar coleta" Command="{Binding Agendarx}" Margin = "20,20,20,0"/>
-            <Button FontSize="14" Content="Editar" IsCancel="true" Command="{Binding Editarx}" Margin = "20,20,20,0" />
-            <Button FontSize="14" Content="Deletar" IsCancel="true" Command="{Binding Deletarx}" Margin = "20,20,20,0" />
-            <Button FontSize="14" Content="Sair" IsCancel="true" Command="{Binding Sairx}" Margin = "20,20,20,0" />
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button FontSize="18" Content="Inserir" Command="{Binding Novox}" Margin = "20,20,20,0" Width="80"/>
+                <Button FontSize="18" Content="Agendar" Command="{Binding Agendarx}" Margin = "20,20,20,0" Width="80"/>
+                <Button FontSize="18" Content="Editar" IsCancel="true" Command="{Binding Editarx}" Margin = "20,20,20,0" Width="80"/>
+                <Button FontSize="18" Content="Deletar" IsCancel="true" Command="{Binding Deletarx}" Margin = "20,20,20,0" Width="80"/>
+                <Button FontSize="18" Content="Sair" IsCancel="true" Command="{Binding Sairx}" Margin = "20,20,20,0" Width="80"/>
+            </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Column = "1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Coletas agendadas" HorizontalAlignment="Center" FontSize="14" />
-            <DataGrid ItemsSource="{Binding listaLixo}" Margin = "20" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding Produtor}" FontSize="14" >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header = "Item" Binding="{Binding Item}"/>
-                    <DataGridTextColumn Header = "Quantidade" Binding="{Binding Quantidade}"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <Button FontSize="14" Content="Editar" IsCancel="true" Command="{Binding Editarx}" Margin = "20,20,20,0" />
-            <Button FontSize="14" Content="Deletar" IsCancel="true" Command="{Binding Deletarx}" Margin = "20,20,20,0" />
-            <Button FontSize="14" Content="Sair" IsCancel="true" Command="{Binding Sairx}" Margin = "20,20,20,0" />
-        </StackPanel>
-        <TextBlock Text = "{Binding Produtor.Nome}" VerticalAlignment="Bottom" />
     </Grid>
 </Window>

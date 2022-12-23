@@ -1,19 +1,14 @@
 {
   "Catadores": [
     {
-      "Nome": "carlos",
-      "Endereco": "rua praia grande",
-      "Telefone": "99999999"
+      "Nome": "Joao da Silva",
+      "Endereco": "Rua Presidente Kennedy 123",
+      "Telefone": "19 987654321"
     },
     {
-      "Nome": "coletor 7",
-      "Endereco": "00",
-      "Telefone": "00"
-    },
-    {
-      "Nome": "coletor teste",
-      "Endereco": "rua",
-      "Telefone": "numero"
+      "Nome": "Carlos Azevedo",
+      "Endereco": "Rua Marechal Hermes 456",
+      "Telefone": "19 987654321"
     }
   ]
 }

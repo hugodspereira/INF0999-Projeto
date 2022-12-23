@@ -1,0 +1,26 @@
+{
+  "Coletas": [
+    {
+      "Nome": "Mercado do Belo",
+      "Endereco": "Rua Praca Verde 457",
+      "Telefone": "19 987654321",
+      "Email": "abcdef@gmail.com",
+      "Lixos": {
+        "Latinhas de aluminio": 100,
+        "Garrafas PET": 20,
+        "Papel A4": 500
+      }
+    },
+    {
+      "Nome": "Escola Cotuca",
+      "Endereco": "Rua da Unicamp",
+      "Telefone": "19 987654321",
+      "Email": "abcdef@outlook.com",
+      "Lixos": {
+        "Latinhas de refrigerante": 100,
+        "Cadeira de praia": 2,
+        "Caixas de Papelao": 50
+      }
+    }
+  ]
+}

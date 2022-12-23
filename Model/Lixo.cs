@@ -7,6 +7,7 @@ namespace INF0999_Projeto.Model
     {
         private string _item;
         private int _quantidade;
+        private string _dono;
         public string Item
         {
             get { return _item; }
@@ -21,6 +22,14 @@ namespace INF0999_Projeto.Model
             set
             {
                 SetProperty(ref _quantidade, value);
+            }
+        }
+        public string Dono
+        {
+            get { return _dono; }
+            set
+            {
+                SetProperty(ref _dono, value);
             }
         }
         public object Clone()

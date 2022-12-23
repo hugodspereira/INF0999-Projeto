@@ -15,31 +15,49 @@
         <Border Grid.Column = "1" Background = "#B6D7A8" />
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                <TextBlock Text = "Coletores ativos hoje: " HorizontalAlignment="Center" FontSize="14" />
-                <TextBlock Text = "{Binding Ativos}" HorizontalAlignment="Center" FontSize="14" />
+                <TextBlock Text = "Coletores ativos hoje: " HorizontalAlignment="Center" FontSize="18" />
+                <TextBlock Text = "{Binding NumColetores}" HorizontalAlignment="Center" FontSize="18" />
             </StackPanel>
-            <DataGrid ItemsSource="{Binding listaColetor}" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding ColetorSelecionado}" FontSize="14">
+            <DataGrid ItemsSource="{Binding listaColetor}" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding ColetorSelecionado}" FontSize="18">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header = "Nome" Binding="{Binding Nome}"/>
                     <DataGridTextColumn Header = "Endereço" Binding="{Binding Endereço}"/>
                     <DataGridTextColumn Header = "Telefone" Binding="{Binding Telefone}"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Background="LightBlue" Content="Registar coletor" CommandParameter="{Binding}" Command="{Binding Novox}" Margin = "20" FontSize="14" />
+            <Button Background="LightBlue" Content="Registar coletor" CommandParameter="{Binding}" Command="{Binding Novox}" Margin = "20" FontSize="18" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                <Button Background="LightBlue" HorizontalAlignment="Center" Width = "64" Content="Deletar" IsCancel="true" Command="{Binding Deletarx}" Margin = "20" FontSize="14"/>
-                <Button Background="LightBlue" HorizontalAlignment="Center" Width = "64" Content="Editar" IsCancel="true" Command="{Binding Editarx}" Margin = "20" FontSize="14" />
-                <Button Background="LightBlue" HorizontalAlignment="Center" Width = "64" Content="Sair" IsCancel="true" Command="{Binding Sairx}" Margin = "20" FontSize="14"/>
+                <Button Background="LightBlue" HorizontalAlignment="Center" Width = "64" Content="Deletar" IsCancel="true" Command="{Binding Deletarx}" Margin = "20" FontSize="18"/>
+                <Button Background="LightBlue" HorizontalAlignment="Center" Width = "64" Content="Editar" IsCancel="true" Command="{Binding Editarx}" Margin = "20" FontSize="18" />
+                <Button Background="LightBlue" HorizontalAlignment="Center" Width = "64" Content="Sair" IsCancel="true" Command="{Binding Sairx}" Margin = "20" FontSize="18"/>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Column = "1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <TextBlock Text = "Próximas coletas:" HorizontalAlignment="Center" />
-            <DataGrid ItemsSource="{Binding listaLixo}" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding LixoSelecionado}" FontSize="14">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <TextBlock Text = "Produtores cadastrados: " HorizontalAlignment="Center" FontSize="18" />
+                <TextBlock Text = "{Binding NumProdutores}" HorizontalAlignment="Center" FontSize="18"  />
+            </StackPanel>
+            <DataGrid ItemsSource="{Binding listaProdutor}" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding ProdutorSelecionado}" FontSize="18">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header = "Item" Binding="{Binding Item}"/>
-                    <DataGridTextColumn Header = "Quantidade" Binding="{Binding Quantidade}"/>
+                    <DataGridTextColumn Header = "Nome" Binding="{Binding Nome}"/>
+                    <DataGridTextColumn Header = "Endereço" Binding="{Binding Endereço}"/>
+                    <DataGridTextColumn Header = "Telefone" Binding="{Binding Telefone}"/>
+                    <DataGridTextColumn Header = "E-mail" Binding="{Binding Email}"/>
                 </DataGrid.Columns>
             </DataGrid>
+            <StackPanel Grid.Column = "1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <TextBlock Text = "Coletas Agendadas: " HorizontalAlignment="Center" FontSize="18" />
+                    <TextBlock Text = "{Binding NumColetas}" HorizontalAlignment="Center" FontSize="18" />
+                </StackPanel>
+                <DataGrid ItemsSource="{Binding listaLixo}" AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding LixoSelecionado}" FontSize="18">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header = "Item" Binding="{Binding Item}"/>
+                        <DataGridTextColumn Header = "Quantidade" Binding="{Binding Quantidade}"/>
+                        <DataGridTextColumn Header = "Produtor" Binding="{Binding Dono}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
         </StackPanel>
         
     </Grid>
